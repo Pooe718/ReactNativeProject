@@ -75,12 +75,12 @@ export const App: React.FunctionComponent<{}> = () => {
 /**
  * This needs to match what's found in your app_delegate.m and MainActivity.java.
  */
-const APP_NAME = "ProjectDVH"
-
-// Should we show storybook instead of our app?
+// const APP_NAME = "ProjectDVH"
 //
-// ⚠️ Leave this as `false` when checking into git.
-const SHOW_STORYBOOK = false
-
-const RootComponent = SHOW_STORYBOOK && __DEV__ ? StorybookUIRoot : App
-AppRegistry.registerComponent(APP_NAME, () => RootComponent)
+// // Should we show storybook instead of our app?
+// //
+// // ⚠️ Leave this as `false` when checking into git.
+// const SHOW_STORYBOOK = false
+//
+// const RootComponent = SHOW_STORYBOOK && __DEV__ ? StorybookUIRoot : App
+// AppRegistry.registerComponent(APP_NAME, () => RootComponent)

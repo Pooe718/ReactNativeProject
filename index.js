@@ -8,4 +8,47 @@
 //
 // It's easier just to leave it here.
 
-import "./app/app.tsx"
+// import "./app/app.tsx"
+// import {StorybookUIRoot} from "./storybook";
+// import {AppRegistry} from "react-native";
+// import {App} from "./app/app";
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
+import React, {Component, createContext} from 'react';
+import ScreenApp from './src/screen';
+import {CartProvider} from './src/global';
+import {AppRegistry} from "react-native";
+import {AppProvider} from "./src/AppProvider";
+
+export default class App extends Component {
+    render() {
+        return (
+           <AppProvider>
+               <ScreenApp/>
+           </AppProvider>
+        )
+    }
+
+}
+
+
+
+const APP_NAME = "ProjectDVH"
+
+// Should we show storybook instead of our app?
+//
+// ⚠️ Leave this as `false` when checking into git.
+const SHOW_STORYBOOK = false
+
+const RootComponent = SHOW_STORYBOOK && __DEV__ ? StorybookUIRoot : App
+AppRegistry.registerComponent(APP_NAME, () => RootComponent)
+
+
+
+
