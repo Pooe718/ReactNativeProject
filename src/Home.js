@@ -42,6 +42,7 @@ export default class HomeScreen extends Component {
         if (!loading) {
             return (
                 <View style={styles.container}>
+
                     <CartConsumer>
                         {({AddP}) =>
                             <SectionGrid
@@ -102,6 +103,7 @@ export default class HomeScreen extends Component {
                                     <View style={styles.title}>
                                         <View style={styles.headT}/>
                                         <Text style={styles.sectionHeader}>{section.title}</Text>
+                                        <Image source={require('./assets/slide_logo_4.jpg')} style={{height: 200, width:"100%"}} />
                                         <View style={styles.tailT}/>
                                     </View>
                                 )}
@@ -118,19 +120,6 @@ export default class HomeScreen extends Component {
                                     <IconF
                                         style={styles.cartIcon}
                                         name="home"
-                                        color="#517fa4"
-                                    />
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.footButton}>
-                            <TouchableOpacity
-                                style={styles.buttonf}
-                                onPress={() => this.onPress(item.name)}>
-                                <Text style={{color: 'white'}}>
-                                    <Icon
-                                        style={styles.cartIcon}
-                                        name="navicon"
                                         color="#517fa4"
                                     />
                                 </Text>

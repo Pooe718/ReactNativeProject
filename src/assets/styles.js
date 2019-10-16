@@ -9,7 +9,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   gridView: {
-    marginTop: 30,
+    marginTop: 10,
   },
   title:{
     position: 'relative',
@@ -17,19 +17,17 @@ export default StyleSheet.create({
   headT:{
     position: 'absolute',
     width: '45%',
-    height: 1,
-    top: 20,
-    borderWidth: 1,
-    borderColor: '#544e4e',
+    top: 12,
+    borderWidth: 2,
+    borderColor: 'rgb(221, 155, 164)\'',
   },
   tailT:{
     position: 'absolute',
     width: '45%',
-    height: 1,
     right: 0,
-    top: 20,
-    borderWidth: 1,
-    borderColor: '#544e4e',
+    top: 12,
+    borderWidth: 2,
+    borderColor: 'rgb(221, 155, 164)\'',
   },
   container: {
     flex: 1,
@@ -43,8 +41,8 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   footButton:{
-    width: '34%',
-    backgroundColor: 'rgb(255, 180, 115)',
+    width: '50%',
+    backgroundColor: 'rgb(221, 155, 164)',
   },
 
   sectionHeader: {
@@ -69,13 +67,13 @@ export default StyleSheet.create({
   button: {
     width: '100%',
     alignItems: 'center',
-    backgroundColor: 'rgb(57, 230, 57)',
+    backgroundColor: 'rgb(67, 148, 0);',
     padding: 10,
   },
   buttonf:{
     width: '100%',
     alignItems: 'center',
-    backgroundColor: 'rgb(255, 180, 115)',
+    backgroundColor: 'rgb(221, 155, 164)',
     padding: 10,
   },
   cartIcon:{

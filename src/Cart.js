@@ -153,7 +153,7 @@ export default class CartScreen extends Component {
                             </TouchableOpacity>
                             <View style={{width: "50%", justifyContent: 'center'}}>
                                 <Text style={{marginLeft: 10, fontStyle: "italic"}}>Total
-                                    Price: {context.total} vnđ</Text>
+                                    Price: {formatcontext.total} vnđ</Text>
                             </View>
                         </View>
                     }
@@ -163,17 +163,21 @@ export default class CartScreen extends Component {
                     transparent={false}
                     visible={this.state.modalVisible}
                     onRequestClose={() => {
-                        alert('Payment Canceled !!');
+                        this.setState({modalVisible: false});
                     }}>
-                    <View style={{marginTop: 22}}>
+                    <View style={{margin: 10, flex:1, flexDirection: "column"}}>
+                        <View style={{}}>
+                        <Text style={{fontSize:50, marginTop: 20, marginBottom: 200, color:"#f66", textAlign:"center"}}>Check out</Text>
+                        </View>
                         <View>
+
                             <TextInput
-                                style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                                style={{ height: 60, borderColor: 'rgb(235, 235, 235)', borderWidth: 1 }}
                                 onChangeText={name => this.setState({name: name})}
                                 placeholder='Name'
                             />
                             <TextInput
-                                style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                                style={{ height: 60, borderColor: 'rgb(235, 235, 235)', borderWidth: 1, marginTop: 6 }}
                                 onChangeText={phone => this.setState({phoneNumber: phone})}
                                 placeholder='Phone number'
                             />
@@ -181,20 +185,35 @@ export default class CartScreen extends Component {
                                 {(context) =>
                                     <TouchableOpacity
                                         style={{
-                                            backgroundColor: "rgb(0, 187, 63)",
+                                            backgroundColor: "rgb(221, 155, 164)",
                                             alignItems: "center",
-                                            justifyContent: "center"
+                                            justifyContent: "center",
+                                            marginTop: 20
                                         }}
                                         onPress={() => {
                                             console.log({context});
                                             this.submitOrder(this.state.name, this.state.phoneNumber, context.cart)
                                         }}>
                                         <Text style={{color: 'white', marginBottom: 10, marginTop: 10}}>
-                                            Submit
+                                            SUBMIT
                                         </Text>
                                     </TouchableOpacity>
                                 }
                             </CartConsumer>
+                            <TouchableOpacity
+                                style={{
+                                    backgroundColor: "rgb(221, 155, 164)",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    marginTop: 2
+                                }}
+                                onPress={() => {
+                                    this.setState({modalVisible: false});
+                                }}>
+                                <Text style={{color: 'white', marginBottom: 10, marginTop: 10}}>
+                                    CANCEL
+                                </Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </Modal>
@@ -207,18 +226,6 @@ export default class CartScreen extends Component {
                                 <IconF
                                     style={styles.cartIcon}
                                     name="home"
-                                />
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.footButton}>
-                        <TouchableOpacity
-                            style={styles.buttonf}
-                            onPress={() => this.onPress(item.name)}>
-                            <Text style={{color: 'white'}}>
-                                <Icon
-                                    style={styles.cartIcon}
-                                    name="navicon"
                                 />
                             </Text>
                         </TouchableOpacity>
